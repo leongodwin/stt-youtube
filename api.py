@@ -47,6 +47,10 @@ def clean_up(files):
 # REST API
 app = Flask(__name__)
 
+@app.route('/', methods=['GET'])
+def hello_world():
+    return "Hello, World!"
+
 @app.route('/transcribe', methods=['POST'])
 def transcribe():
     url = request.json['url']
